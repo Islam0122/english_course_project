@@ -9,7 +9,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = False
 
 # ALLOWED_HOSTS
-ALLOWED_HOSTS = ['duishobaevislam01.up.railway.app']
+ALLOWED_HOSTS = ['*']
 
 
 DATABASES = {
