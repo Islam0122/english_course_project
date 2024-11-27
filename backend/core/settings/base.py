@@ -9,7 +9,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-PRODUCTION = True
+PRODUCTION = False
 INSTALLED_APPS = [
     'jazzmin',
     'django.contrib.admin',
@@ -27,6 +27,7 @@ INSTALLED_APPS = [
 
     # > apps <
     'app.main',
+    'app.english_test',
 ]
 
 
