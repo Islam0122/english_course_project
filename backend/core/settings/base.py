@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     # > apps <
     'app.main',
     'app.english_test',
+    'app.testresult',
 ]
 
 

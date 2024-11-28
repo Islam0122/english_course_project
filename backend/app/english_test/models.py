@@ -75,6 +75,8 @@ class QuestionModel(models.Model):
         verbose_name='Дата обновления',
         help_text='Дата и время последнего обновления вопроса.'
     )
+    def __str__(self):
+        return self.title
 
     class Meta:
         ordering = ['created_at']

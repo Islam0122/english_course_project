@@ -16,10 +16,7 @@ class TestModelAdmin(admin.ModelAdmin):
     ordering = ('-created_at',)
     fieldsets = (
         ("Тест", {
-            'fields': ('title', 'description')
-        }),
-        ('Даты', {
-            'fields': ('created_at', 'updated_at'),
+            'fields': ('title', 'description','created_at', 'updated_at'),
             'classes': ('collapse',)
         }),
     )
