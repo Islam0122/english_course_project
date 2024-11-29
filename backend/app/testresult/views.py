@@ -12,7 +12,7 @@ class TestResultListCreateView(ListCreateAPIView):
     serializer_class = TestResultWithAnswersSerializer
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        serializer.save(user=1)
 
 
 class TestResultDetailView(RetrieveAPIView):
