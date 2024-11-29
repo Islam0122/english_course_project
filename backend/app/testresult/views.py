@@ -1,15 +1,20 @@
-from rest_framework import generics
+from rest_framework import generics, status
+from rest_framework.generics import ListCreateAPIView, RetrieveAPIView
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from .models import TestResult, UserAnswer
-from .serializers import TestResultSerializer, UserAnswerSerializer
+from .serializers import *
 
 
-# Представление для получения списка TestResult
-class TestResultListView(generics.ListCreateAPIView):
-    queryset = TestResult.objects.all()
-    serializer_class = TestResultSerializer
+class TestResultListCreateView(ListCreateAPIView):
+    queryset = TestResult.objects.prefetch_related('answers__question')
+    serializer_class = TestResultWithAnswersSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
 
-# Представление для получения списка UserAnswer
-class UserAnswerListView(generics.ListCreateAPIView):
-    queryset = UserAnswer.objects.all()
-    serializer_class = UserAnswerSerializer
+class TestResultDetailView(RetrieveAPIView):
+    queryset = TestResult.objects.prefetch_related('answers__question')
+    serializer_class = TestResultWithAnswersSerializer

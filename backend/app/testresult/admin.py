@@ -22,10 +22,10 @@ class TestResultAdmin(admin.ModelAdmin):
     )
     readonly_fields = ('completed_at',)
 
-    # Запрет добавления записей
-    def has_add_permission(self, request):
-        return False
-
-    # Запрет изменения записей
-    def has_change_permission(self, request, obj=None):
-        return False
+    # # Запрет добавления записей
+    # def has_add_permission(self, request):
+    #     return False
+    #
+    # # Запрет изменения записей
+    # def has_change_permission(self, request, obj=None):
+    #     return False

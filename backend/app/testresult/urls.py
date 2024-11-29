@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import TestResultListView, UserAnswerListView
+from .views import *
 
 urlpatterns = [
-    path('test-results/', TestResultListView.as_view(), name='test-result-list'),
-    path('user-answers/', UserAnswerListView.as_view(), name='user-answer-list'),
+    path('test-results/', TestResultListCreateView.as_view(), name='test-result-list-create'),
+    path('test-results/<int:pk>/', TestResultDetailView.as_view(), name='test-result-detail'),
 ]
