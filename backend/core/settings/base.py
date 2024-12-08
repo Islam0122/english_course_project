@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'app.main',
     'app.english_test',
     'app.testresult',
+    'app.Lesson'
 ]
 
 
@@ -122,4 +123,3 @@ if DEBUG:
     MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
 
 
-# from .jazzmin import JAZZMIN_SETTINGS
